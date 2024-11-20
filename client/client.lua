@@ -43,9 +43,11 @@ CreateThread(function()
             end
         end
 
-        if IsPedReloading(playerPed) and not MinigameActive and not WhitelistWeapon then
-            ClearPedTasks(playerPed)
-            Minigame()
+        if IsControlJustPressed(0, 0xE30CD707) then
+            if IsPedReloading(playerPed) and not MinigameActive and not WhitelistWeapon then
+                ClearPedTasks(playerPed)
+                Minigame()
+            end
         end
 
         if Reload then
